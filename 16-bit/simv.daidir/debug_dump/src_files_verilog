@@ -1,0 +1,5 @@
+/net/courses/2025/EE3019/KennyI/lab1/source/proj/processors/16-bit/CPUtop.v
+/net/courses/2025/EE3019/KennyI/lab1/source/proj/processors/16-bit/SIMDadd.v
+/net/courses/2025/EE3019/KennyI/lab1/source/proj/processors/16-bit/SIMDmultiply.v
+/net/courses/2025/EE3019/KennyI/lab1/source/proj/processors/16-bit/SIMDshifter.v
+/net/courses/2025/EE3019/KennyI/lab1/source/proj/processors/16-bit/processor_tb.v

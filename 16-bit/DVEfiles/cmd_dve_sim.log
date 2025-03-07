@@ -1,0 +1,27 @@
+set ucliGUI::state
+set ucliGUI::state
+ucliCore::getToolPID
+synopsys::env hasTB
+trigger_hier_stack_context_switch 0
+synUtils::setDVEInitPhase 1
+synopsys::dump -type VPD -file /net/courses/2025/EE3019/KennyI/lab1/source/proj/processors/16-bit/inter.vpd -locking
+synopsys::dump -autoflush on -fid VPD0
+set ::dve_fid VPD0
+synUtils::setDVEInitPhase 0
+ucliCore::getToolPID
+synUtils::sendTool -active _icl_setToolSocket /tmp/smlnpPD9jK1
+synUtils::sendTool -active {_icl_start_rpc -version "S-2021.09-SP1-1_Full64" -sync_file /tmp/vcs_dve_rpc.KennyI.20963}
+synUtils::sendTool -active {_icl_createSharedMemory /tmp/vcs_dve_general.KennyI.20963}
+config endofsim noexit
+config onfail enable all
+config syscaddplainmembers
+config syscaddsourcenames
+config syscaddstructtypes
+synopsys::listing -disable
+synopsys::dump -add {processor_tb} -scope "." -depth 1 -fid VPD0
+synopsys::dump -add {processor_tb.DATA_MEM processor_tb.INST_MEM } -aggregates  -fid VPD0
+synopsys::run
+set ucliGUI::state
+set ucliGUI::state
+set ucliGUI::state
+set ucliGUI::state
